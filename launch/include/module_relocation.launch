@@ -1,0 +1,7 @@
+<launch>
+
+    <arg name="project" default="lio_sam"/>
+    
+    <node pkg="$(arg project)" type="$(arg project)_relocationVisual"   name="$(arg project)_relocationVisual"    output="screen" 	respawn="true"/>
+    
+</launch>
