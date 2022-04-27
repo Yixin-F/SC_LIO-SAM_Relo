@@ -1109,7 +1109,7 @@ int main(int argc, char **argv){
     // }
     // RL.mode = argv[3];
 
-    RL.mode = "2";
+    RL.mode = "1";
 
     ROS_INFO("\033[1;32m----> Relocation Started.\033[0m");
 
