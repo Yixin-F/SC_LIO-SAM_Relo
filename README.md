@@ -29,10 +29,20 @@
     ```
 3. By following [this guideline](https://github.com/irapkaist/file_player_mulran), you can easily publish the MulRan dataset's LiDAR and IMU topics via ROS.
 
-## Dependency
-- All dependencies are same as the original [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM#dependency)
+## Application
+### Framework
+<centre>
+<img src="img/framework.png" width="50%">
+</centre>
 
-## Show
+### SC generation
+<centre>
+<img src="img/scmaking.gif" width="30%">
+</centre>
 
+### Test
+<centre>
+<img src="img/relocalization.gif" width="80%">
+</centre>
 
 
