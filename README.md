@@ -22,11 +22,11 @@ We provide example results using [MulRan dataset](https://sites.google.com/view/
 
 #### example 1: [KAIST02 of MulRan dataset](https://youtu.be/Il0YxztuZEU?t=280)
 
-<p align="center"><img src="SC-LIO-SAM/doc/kaist02.png" width=900></p>
+<p align="center"><img src="SC-LIO-SAM_Relo/doc/kaist02.png" width=900></p>
 
 
 #### example 2: [Riverside03 of MulRan dataset](https://youtu.be/Y6DXlC34qlc?t=459)
-<p align="center"><img src="SC-LIO-SAM/doc/riverside03.png" width=900></p>
+<p align="center"><img src="SC-LIO-SAM_Relo/doc/riverside03.png" width=900></p>
 
 - As seen in the above [video](https://youtu.be/Y6DXlC34qlc?t=459), the combination of Scan Context loop detector and LIO-SAM's odometry is robust to highly dynamic and less structured environments (e.g., a wide road on a bridge with many moving objects).
 
@@ -67,10 +67,10 @@ We provide example results using [MulRan dataset](https://sites.google.com/view/
 <p align="center"><img src="SC-LIO-SAM/doc/saver.png" width=800></p>
 
 - If you use the above saved files, you can feed these data to [Removert](https://github.com/irapkaist/removert) and can removing dynamic objects. No GT labels or external sensor data such as RTK-GPS is required. This [tutorial](https://youtu.be/UiYYrPMcIRU) guides steps from running SC-LIO-SAM to save data to Removert to remove dynamic objects in a scan. Example results are: 
-<p align="center"><img src="SC-LIO-SAM/doc/removert_eaxmple.png" width=900></p>
+<p align="center"><img src="SC-LIO-SAM_Relo/doc/removert_eaxmple.png" width=900></p>
 
 - For the safe and light-weight map saver, we support off-line scan merging utils for the global map construction within user's ROI (see tools/python/makeMergedMap.py, for the details, see the [tutorial video](https://youtu.be/jmR3DH_A4Co)) 
-  <p align="center"><img src="SC-LIO-SAM/doc/utils_example.png" width=900></p>
+  <p align="center"><img src="SC-LIO-SAM_Relo/doc/utils_example.png" width=900></p>
 
 ## Show
 
