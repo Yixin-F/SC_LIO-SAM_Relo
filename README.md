@@ -1,5 +1,4 @@
-# SC-LIO-SAM
-version 2021-06-24 
+# SC-LIO-SAM-Relo
 
 ## What is SC-LIO-SAM?
 - SC-LIO-SAM is **a real-time lidar-inertial SLAM package.**
@@ -73,6 +72,8 @@ We provide example results using [MulRan dataset](https://sites.google.com/view/
 - For the safe and light-weight map saver, we support off-line scan merging utils for the global map construction within user's ROI (see tools/python/makeMergedMap.py, for the details, see the [tutorial video](https://youtu.be/jmR3DH_A4Co)) 
   <p align="center"><img src="SC-LIO-SAM/doc/utils_example.png" width=900></p>
 
+## Show
+
 ## Cite SC-LIO-SAM 
 
 ```
@@ -97,29 +98,3 @@ We provide example results using [MulRan dataset](https://sites.google.com/view/
 }
 ```
 
-## Contact
-- Maintainer: Giseop Kim (`paulgkim@kaist.ac.kr`)
-#### Contributors
-- Minwoo Jung: made the original LIO-SAM runs on the MulRan dataset. 
-
-## Acknowledgement
-  - SC-LIO-SAM is based on LIO-SAM (Tixiao Shan et al., IROS 2020). We thank Tixiao Shan and the LIO-SAM authors for providing a great base framework.
-
-## Update history 
-- 2021.06.23
-  - yaml file is reformatted to support the compatible form with the recent original LIO-SAM repository.  
-  - offline ROI global map construction python util is supported. 
-
-## TODO
-- About performance
-  - improve better RS loop closing (ICP test sometimes fails in reverse directions) 
-  - support reverse-closing of SC loops with Scan Context initial yaw
-  - support SC augmentation 
-  - lagged RS loop closing after large drifts solved 
-- About funtions for convenience
-  - [x] save extended data: nodes' time, 6D pose, node's point cloud, and corresponding SC descriptors
-  - [x] make a static map and self-labeled dynamic points by combining SC-LIO-SAM and [removert](https://github.com/irapkaist/removert). 
-- Minor (not related to the performance)
-  - fix the visualization issue: disappearing map points after SC loop closing
-  - fix safe-save for map points after closing the program   
-# SC_LIO-SAM_Relo
