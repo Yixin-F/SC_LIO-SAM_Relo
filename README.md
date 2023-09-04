@@ -1,5 +1,3 @@
-# SC-LIO-SAM_Relo
-
 ## What is SC-LIO-SAM?
 - SC-LIO-SAM is **a real-time lidar-inertial SLAM package.**
   - LiDAR-inertial SLAM: Scan Context + LIO-SAM
@@ -31,34 +29,10 @@
     ```
 3. By following [this guideline](https://github.com/irapkaist/file_player_mulran), you can easily publish the MulRan dataset's LiDAR and IMU topics via ROS.
 
-
 ## Dependency
 - All dependencies are same as the original [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM#dependency)
 
 ## Show
 
 
-## Cite SC-LIO-SAM 
-
-```
-@INPROCEEDINGS { gkim-2018-iros,
-  author = {Kim, Giseop and Kim, Ayoung},
-  title = { Scan Context: Egocentric Spatial Descriptor for Place Recognition within {3D} Point Cloud Map },
-  booktitle = { Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems },
-  year = { 2018 },
-  month = { Oct. },
-  address = { Madrid }
-}
-```
- and 
-```
-@inproceedings{liosam2020shan,
-  title={LIO-SAM: Tightly-coupled Lidar Inertial Odometry via Smoothing and Mapping},
-  author={Shan, Tixiao and Englot, Brendan and Meyers, Drew and Wang, Wei and Ratti, Carlo and Rus Daniela},
-  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  pages={5135-5142},
-  year={2020},
-  organization={IEEE}
-}
-```
 
