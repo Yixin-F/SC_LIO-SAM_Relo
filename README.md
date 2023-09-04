@@ -1,4 +1,4 @@
-# SC-LIO-SAM-Relo
+# SC-LIO-SAM
 
 ## What is SC-LIO-SAM?
 - SC-LIO-SAM is **a real-time lidar-inertial SLAM package.**
