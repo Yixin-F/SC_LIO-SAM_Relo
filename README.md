@@ -15,21 +15,6 @@
 - Easy to use: A user just remembers and uses only two API functions; ```makeAndSaveScancontextAndKeys``` and ```detectLoopClosureID```.
 - Fast: A single loop detection requires under 30 ms (for 20 x 60 size, 3 candidates)
 
-
-## Examples
-
-We provide example results using [MulRan dataset](https://sites.google.com/view/mulran-pr/dataset), which provides LiDAR and 9dof IMU data. You can see the parameter file (i.e., params_mulran.yaml) modified for MulRan dataset.
-
-#### example 1: [KAIST02 of MulRan dataset](https://youtu.be/Il0YxztuZEU?t=280)
-
-<p align="center"><img src="SC-LIO-SAM_Relo/doc/kaist02.png" width=900></p>
-
-
-#### example 2: [Riverside03 of MulRan dataset](https://youtu.be/Y6DXlC34qlc?t=459)
-<p align="center"><img src="SC-LIO-SAM_Relo/doc/riverside03.png" width=900></p>
-
-- As seen in the above [video](https://youtu.be/Y6DXlC34qlc?t=459), the combination of Scan Context loop detector and LIO-SAM's odometry is robust to highly dynamic and less structured environments (e.g., a wide road on a bridge with many moving objects).
-
 ## How to use?
 - We provide a tutorial that runs SC-LIO-SAM on MulRan dataset, you can reproduce the above results by following these steps. 
 
@@ -50,29 +35,8 @@ We provide example results using [MulRan dataset](https://sites.google.com/view/
 ## Dependency
 - All dependencies are same as the original [LIO-SAM](https://github.com/TixiaoShan/LIO-SAM#dependency)
 
-
-## Notes
-#### About performance
-- We used two types of loop detetions (i.e., radius search (RS)-based as already implemented in the original LIO-SAM and Scan context (SC)-based global revisit detection). See mapOptmization.cpp for details. ```performSCLoopClosure``` is good for correcting large drifts and ```performRSLoopClosure``` is good for fine-stitching.
-- To prevent the wrong map correction, we used Cauchy (but DCS can be used) kernel for loop factor. See mapOptmization.cpp for details. We found that Cauchy is emprically enough.
-
-#### Minor
-- We used C++14 to use std::make_unique in Scancontext.cpp but you can use C++11 with slightly modifying only that part.
-- We used a larger value for velocity upper bound (see ```failureDetection``` in imuPreintegration.cpp) for fast motions of a MulRan dataset's car platform.
-- The some code lines are adapted for Ouster LiDAR. Thus, if you use an other LiDAR, please refer [the original author's guideline](https://github.com/TixiaoShan/LIO-SAM#other-notes) and fix some lines.
-- A LiDAR scan of MulRan dataset has no ring information, thus we simply made a hardcoding like ```int rowIdn = (i % 64) + 1 ``` in imageProjection.cpp to make a ring index information that LIO-SAM requires, and it works. However, if you use an other LiDAR, you need to change this line. 
-
-## Applications 
-- With our [save utility](https://github.com/gisbi-kim/SC-LIO-SAM/blob/1e1bfea4f7708fbd93d9eb471e63ae9804e1dd16/SC-LIO-SAM/src/mapOptmization.cpp#L203) accompanied with this repository, we can save a set of keyframe's time, estimated pose, a corresponding point cloud, and Scan Context descriptors. The estimated poses are saved as a file named optimized_poses.txt and its format is equivalent to the famous KITTI odometry dataset's pose.txt file. For example: 
-<p align="center"><img src="SC-LIO-SAM/doc/saver.png" width=800></p>
-
-- If you use the above saved files, you can feed these data to [Removert](https://github.com/irapkaist/removert) and can removing dynamic objects. No GT labels or external sensor data such as RTK-GPS is required. This [tutorial](https://youtu.be/UiYYrPMcIRU) guides steps from running SC-LIO-SAM to save data to Removert to remove dynamic objects in a scan. Example results are: 
-<p align="center"><img src="SC-LIO-SAM_Relo/doc/removert_eaxmple.png" width=900></p>
-
-- For the safe and light-weight map saver, we support off-line scan merging utils for the global map construction within user's ROI (see tools/python/makeMergedMap.py, for the details, see the [tutorial video](https://youtu.be/jmR3DH_A4Co)) 
-  <p align="center"><img src="SC-LIO-SAM_Relo/doc/utils_example.png" width=900></p>
-
 ## Show
+
 
 ## Cite SC-LIO-SAM 
 
